@@ -1,0 +1,16 @@
+# job_build_app.yml
+parameters:
+  frameworkVersion: ''
+  toolVersion: ''
+  name: ''
+  certificate: ''
+  
+jobs:
+- job: Build_app_${{ parameters.name }}
+
+  steps:
+  - task: Bash@3
+    inputs:
+      targetType: 'inline'
+      script: |
+        echo This job will running on env ${{ parameters.name }} with framework version ${{ parameters.frameworkVersion }} and tool ${{ parameters.toolVersion }} with the certificat ${{ parameters.certificate }}

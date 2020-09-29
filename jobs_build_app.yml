@@ -1,0 +1,13 @@
+parameters:
+  frameworkVersion: ''
+  toolVersion: ''
+  envs: {}
+
+jobs:
+- ${{ each env in parameters.envs }}:
+  - template: job_build_app.yml
+    parameters:
+      name: ${{ env.name }}
+      frameworkVersion: ${{ parameters.frameworkVersion }}
+      toolVersion: ${{ parameters.toolVersion }}
+      certificate: ${{ env.certificate }}
