@@ -16,7 +16,7 @@ stages:
           certificate: 'certificat-dev'
         - env:
           name: 'staging'
-          provisioningProfile: 'certificat-staging'
+          certificate: 'certificat-staging'
         - env:
           name: 'production'
-          provisioningProfile: 'certificat-production'
+          certificate: 'certificat-production'
